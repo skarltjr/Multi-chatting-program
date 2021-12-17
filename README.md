@@ -27,4 +27,5 @@
     - 사실 서버로 보내는게 아니라 단톡방 멤버들에게 보낸다는 개념 / 받는것도 마찬가지
 3. 단톡방 멤버 리스트는 모든 서버 스레드가 공유하기에 sync
 4. 정리하자면 서버에서는 각 accept소캣을 각각의 스레드로 담당하고 /  각각의 클라이언트는 send / receive를 각 thread를 할당받아 수행
-![Untitled Diagram drawio](https://user-images.githubusercontent.com/62214428/146584070-c87b3ef5-7484-4333-bd17-b9188f75e967.png)
+
+- ![Untitled Diagram drawio](https://user-images.githubusercontent.com/62214428/146584070-c87b3ef5-7484-4333-bd17-b9188f75e967.png)

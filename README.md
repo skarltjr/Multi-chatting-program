@@ -18,3 +18,12 @@
 - ★가장 중요점 / 여러 스레드에서 list를 공유한다
     - 즉 멀티 스레드 환경에서 공유변수가 문제될 수 있다
     - 이를 막기 위해 해당 list는 synchronizedList로 사용
+
+
+### 정리
+1. 서버는 새로운 스레드로 accept 소캣 담당
+2. 클라이언트는 sendThread를 통해 서버로 메세지를 보내고 / receiveThread를 통해 서버로부터 메세지를 받는다
+    - 사실 서버로 보내는게 아니라 단톡방 멤버들에게 보낸다는 개념 / 받는것도 마찬가지
+3. 단톡방 멤버 리스트는 모든 서버 스레드가 공유하기에 sync
+4. 정리하자면 서버에서는 각 accept소캣을 각각의 스레드로 담당하고 /  각각의 클라이언트는 send / receive를 각 thread를 할당받아 수행
+![Untitled Diagram drawio](https://user-images.githubusercontent.com/62214428/146584070-c87b3ef5-7484-4333-bd17-b9188f75e967.png)

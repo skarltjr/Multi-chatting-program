@@ -27,7 +27,6 @@ class AcceptThread(
         override fun run() {
                 var name: String? = null
                 try {
-                        println("닉네임을 입력해주세요!")
                         val reader = BufferedReader(InputStreamReader(socket.getInputStream()))
                         name = reader.readLine()
                         sendAll(name + "님이 입장했습니다")
